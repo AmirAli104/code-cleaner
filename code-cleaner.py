@@ -1,10 +1,10 @@
 import re, argparse, os
 
 parser = argparse.ArgumentParser(prog='code-cleaner')
-parser.add_argument('-n','--line',help='files to clear line numbers',nargs='+')
-parser.add_argument('-s','--shell',help='file to clear shell prompts',nargs='+')
-parser.add_argument('-d','--directory',help="Consider the values given to '--shell' and '--line' as directories. You must give the" \
-                    " file extentions you want to clean them to this argument. Its default is '.py' files.",nargs='*')
+parser.add_argument('-n','--line',help='files/directories to clear line numbers',nargs='+')
+parser.add_argument('-s','--shell',help='files/directories to clear shell prompt characters',nargs='+')
+parser.add_argument('-d','--directory',help="Consider the values given to '--shell' and '--line' as directories. You must give" \
+                    " the file extentions you want to clean them to this argument. Its default is '.py' files.",nargs='*')
 parser.add_argument('-t','--tree',action='store_true',help="If the both '--directory' and '--tree' are enabled it searches" \
                     " all subdirectories to find files")
 parser.add_argument('-l','--log',action='store_true',help='enable logging')
