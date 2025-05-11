@@ -58,14 +58,14 @@ def run_the_cleaners(cleaner_func):
     global current_process
 
     if args.line:
-        current_process = 'Cleaning line numbers on'
+        current_process = 'Cleaning line numbers from'
         cleaner_func(args.line,LINE_NUMBER_PATTERN)
 
     if args.shell:
-        current_process = 'Cleaning shell prompts on'
+        current_process = 'Cleaning shell prompts from'
         cleaner_func(args.shell,SHELL_PATTERNS)
 
-def verify_file_and_clean_file(file_path,target_file_extentions,patterns):
+def verify_and_clean_file(file_path,target_file_extentions,patterns):
     try:
         if os.path.splitext(file_path)[1] in target_file_extentions and os.path.isfile(file_path):
             cleaner(file_path,patterns)
@@ -87,7 +87,7 @@ def directory_mode(directories_list,patterns):
                     for path in os.walk(directory):
                         for file_name in path[2]:
                             file_path = os.path.join(path[0],file_name)
-                            verify_file_and_clean_file(file_path,target_file_extentions,patterns)
+                            verify_and_clean_file(file_path,target_file_extentions,patterns)
                 except possible_exceptions as err:
                     print(err)
 
@@ -96,7 +96,7 @@ def directory_mode(directories_list,patterns):
                 try:
                     for file_name in os.listdir(directory):
                         file_path = os.path.join(directory,file_name)
-                        verify_file_and_clean_file(file_path,target_file_extentions,patterns)
+                        verify_and_clean_file(file_path,target_file_extentions,patterns)
                 except possible_exceptions as err:
                     print(err)
 
