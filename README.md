@@ -14,11 +14,11 @@ You can also remove python shell prompts (`>>>` and `...`) from python codes.
 |`-t,--tree`|If the both '--directory' and '--tree' are enabled it searches all subdirectories to find files|
 |`-l,--log`|enable logging|
 
-`python code-cleaner.py -s a.py b.py -n a.c`
+```python code-cleaner.py -s a.py b.py -n a.c```
 
 The above command cleans the line numbers from `a.c` and the shell prompt characters from `a.py`.
 
 
-`python code-cleaner.py -n codes_directory -d .c .py -t -l`
+```python code-cleaner.py -n codes_directory -d .c .py -t -l```
 
 The above command cleares the line numbers from the `.c` and `.py` files in the given directory and also shows the log. Because of the `-t` argument it checks all subdirectories.
