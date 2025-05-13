@@ -14,6 +14,9 @@ You can also remove python shell prompts (`>>>` and `...`) from python codes.
 |`-t,--tree`|If the both '--directory' and '--tree' are enabled it searches all subdirectories to find files|
 |`-l,--log`|enable logging|
 
+Examples
+---
+
 ```
 python code-cleaner.py -s a.py b.py -n a.c
 ```
