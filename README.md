@@ -4,7 +4,8 @@ Maybe you have experienced that sometimes you copy a code from somewhere to past
 
 You can also remove python shell prompts (`>>>` and `...`) from python codes.
 
-# command-line options
+command-line options
+---
 
 |option|description|
 |------|------|
