@@ -13,7 +13,7 @@ command-line options
 |`-s,--shell`|files/directories to clear shell prompt characters|
 |`-d,--directory`|Consider the values given to '--shell' and '--line' as directories. You must give the file extentions you want to clean them to this argument. Its default is '.py' files.|
 |`-t,--tree`|If the both '--directory' and '--tree' are enabled it searches all subdirectories to find files|
-|`-l,--log`|enable logging|
+|`-v,--verbose`|Enable verbose mode|
 
 Examples
 ---

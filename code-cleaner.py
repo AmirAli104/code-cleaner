@@ -1,14 +1,18 @@
 import re, argparse, os
 import sys
 
-parser = argparse.ArgumentParser(prog='code-cleaner')
-parser.add_argument('-n','--line',help='files/directories to clear line numbers',nargs='+')
-parser.add_argument('-s','--shell',help='files/directories to clear shell prompt characters',nargs='+')
+parser = argparse.ArgumentParser(prog='code-cleaner',
+                                description='A program to automatically remove line numbers \
+                                and python shell prompt characters from a code')
+
+parser.add_argument('-n','--line',help='files/directories to clear line numbers',nargs='+',metavar='<paths>')
+parser.add_argument('-s','--shell',help='files/directories to clear shell prompt characters',nargs='+',metavar='<paths>')
 parser.add_argument('-d','--directory',help="Consider the values given to '--shell' and '--line' as directories. You must give" \
-                    " the file extentions you want to clean them to this argument. Its default is '.py' files.",nargs='*')
+                    " the file extentions you want to clean them to this argument. Its default is '.py' files.",
+                    nargs='*',metavar='<extensions>')
 parser.add_argument('-t','--tree',action='store_true',help="If the both '--directory' and '--tree' are enabled it searches" \
                     " all subdirectories to find files")
-parser.add_argument('-l','--log',action='store_true',help='enable logging')
+parser.add_argument('-v','--verbose',action='store_true',help='Enable verbose mode')
 
 if len(sys.argv) == 1:
     parser.print_help()
@@ -102,7 +106,7 @@ def directory_mode(directories_list,patterns):
 
 if __name__ == '__main__':
     try:
-        if args.log:
+        if args.verbose:
             cleaner = logger(cleaner)
 
         if args.directory is not None:
